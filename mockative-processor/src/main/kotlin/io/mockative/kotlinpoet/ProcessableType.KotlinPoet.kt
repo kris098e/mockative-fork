@@ -87,7 +87,10 @@ private fun TypeSpec.Builder.buildTypeSpec(
             typeSpec.superclass(sourceClassName.parameterizedByAny(typeVariables))
 
             constructorParameters.forEach { param ->
-                val property = properties.find { it.name == param.name!!.asString() }!!
+                val property =
+                    properties.find { it.name == param.name?.asString() }?.type
+                        ?: param.type.toTypeNameMockative() // if the constructor parameter is not a property, then it is private
+
                 val constructorParameterInitialization = property.getConstructorParameterValue(generatedMockTypes)
 
                 addSuperclassConstructorParameter("$param = %L", constructorParameterInitialization)
