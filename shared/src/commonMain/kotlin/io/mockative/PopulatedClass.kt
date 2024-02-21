@@ -4,6 +4,8 @@ package io.mockative
 class PopulatedClass(
     private val class2: Class2,
     private val inner2: InnerClass,
+    internal val internalVal: String,
+    protected val protectedVal: String,
     val class3: Class3,
     val number: Int?,
     val map: Map<String, String>?,
