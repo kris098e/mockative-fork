@@ -23,17 +23,12 @@ class MockativeSymbolProcessor(
         // Resolve the processable types
         val processableTypes = ProcessableType.fromResolver(resolver, stubsUnitByDefault)
 
-        // Generate Mock classes
-        processableTypes
-            .forEach { type ->
-                val packageName = type.mockClassName.packageName
-                val fileName = type.mockClassName.fullSimpleName
+        val generatedMockTypes = processableTypes.flatten().associateBy(
+            { it.sourceClassName.toString() }, { it.mockClassName.toString() }
+        )
 
-                FileSpec.builder(packageName, fileName)
-                    .addType(type.buildMockTypeSpec())
-                    .build()
-                    .writeTo(codeGenerator, aggregating = false)
-            }
+        // Generate Mock classes
+        generateMockClasses(processableTypes, generatedMockTypes)
 
         // Generate Mock Functions
         processableTypes
@@ -48,5 +43,26 @@ class MockativeSymbolProcessor(
             }
 
         return emptyList()
+    }
+
+    private fun List<ProcessableType>.flatten(): List<ProcessableType> {
+        return this.flatMap { type ->
+            listOf(type) + type.children.flatten()
+        }
+    }
+
+    private fun generateMockClasses(processableTypes: List<ProcessableType>, generatedMockTypes: Map<String, String>) {
+        processableTypes
+            .forEach { type ->
+                val packageName = type.mockClassName.packageName
+                val fileName = type.mockClassName.fullSimpleName
+
+                FileSpec.builder(packageName, fileName)
+                    .addType(type.buildMockTypeSpec(generatedMockTypes))
+                    .build()
+                    .writeTo(codeGenerator, aggregating = false)
+
+                generateMockClasses(type.children, generatedMockTypes)
+            }
     }
 }
