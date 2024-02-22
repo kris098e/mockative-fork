@@ -119,8 +119,6 @@ class GitHubServiceTests {
 }
 ```
 
-## 
-
 Then, to stub a function or property on the mock there is a couple of options:
 
 ### Stubbing using values
