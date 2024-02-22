@@ -25,6 +25,8 @@ class PopulatedClass(
 
     @Mocked
     class InnerClass(val s: String) {
+
+        @Deprecated("This is deprecated", ReplaceWith("wassup()"))
         fun wassup() = "Hello"
     }
     val notConstructorParam = "notConstructorParam"

@@ -1,6 +1,7 @@
 package io.mockative.kotlinpoet
 
 import com.squareup.kotlinpoet.*
+import com.squareup.kotlinpoet.ksp.toAnnotationSpec
 import io.mockative.INVOCATION_FUNCTION
 import io.mockative.LIST_OF
 import io.mockative.MOCKABLE
@@ -15,6 +16,7 @@ internal fun ProcessableFunction.buildFunSpec(): FunSpec {
     val argumentsList = buildArgumentList()
     val listOfArguments = buildListOfArgument(argumentsList)
     val parameterSpecs = buildParameterSpecs()
+    val annotationSpecs = getAnnotationSpecs()
 
     val builder = FunSpec.builder(name)
 
@@ -25,6 +27,7 @@ internal fun ProcessableFunction.buildFunSpec(): FunSpec {
 
     builder
         .addModifiers(modifiers)
+        .addAnnotations(annotationSpecs)
         .returns(returnType.applySafeAnnotations())
         .addParameters(parameterSpecs)
         .addTypeVariables(typeVariables)
@@ -36,6 +39,12 @@ internal fun ProcessableFunction.buildFunSpec(): FunSpec {
     }
 
     return builder.build()
+}
+
+private fun ProcessableFunction.getAnnotationSpecs(): List<AnnotationSpec> {
+    val annotations = declaration.annotations.map { it.toAnnotationSpec() }.toList()
+
+    return annotations
 }
 
 private fun ProcessableFunction.buildModifiers() = buildList {
