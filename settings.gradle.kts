@@ -29,3 +29,4 @@ if (startParameter.projectProperties.containsKey("check_publication")) {
 include("compare-mockKTests")
 include("compare-mockativeTests")
 include("compare-testClasses")
+include("compare-mockitoTests")

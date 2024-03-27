@@ -1,4 +1,5 @@
 import compare.frameworks.classes.HelloClass
+import compare.frameworks.classes.Se
 import io.mockative.Mock
 import io.mockative.classOf
 import io.mockative.every

@@ -13,6 +13,7 @@ class FirstTest {
         every {
             mock.sayHello("Kristian")
         } returns "hej"
+
         mock.sayHello("Kristian")
     }
 }
