@@ -29,7 +29,13 @@ kotlin {
                 implementation(kotlin("test-junit"))
                 implementation("junit:junit:4.13.2")
             }
-        }}}
+        }
+        getByName("commonTest") {
+            dependencies {
+                implementation(kotlin("reflect"))
+            }
+        }
+    }}
 
 dependencies {
     configurations

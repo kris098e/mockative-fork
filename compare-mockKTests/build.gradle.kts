@@ -1,3 +1,7 @@
+import org.gradle.api.tasks.testing.Test
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+import java.util.concurrent.atomic.AtomicLong
+
 plugins {
     kotlin("multiplatform")
 }
@@ -28,7 +32,13 @@ kotlin {
                 implementation(kotlin("test-junit"))
                 implementation("junit:junit:4.13.2")
             }
-        }}}
+        }
+        getByName("commonTest") {
+            dependencies {
+                implementation(kotlin("reflect"))
+            }
+        }
+    }}
 
 tasks.named<Test>("jvmTest") {
     systemProperty("io.mockk.classdump.path", "mockaaaaaa")

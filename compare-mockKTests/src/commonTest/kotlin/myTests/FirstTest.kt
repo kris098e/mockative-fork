@@ -1,12 +1,12 @@
 package myTests
 
-import compare.frameworks.classes.HelloClass
+import compare.frameworks.classes.HelloClass1
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Test
 
 class FirstTest {
-    val mock: HelloClass = mockk()
+    val mock: HelloClass1 = mockk()
 
     @Test
     fun test() {
