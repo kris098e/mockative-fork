@@ -2,6 +2,7 @@ package io.mockative.kotlinpoet
 
 import com.squareup.kotlinpoet.*
 import io.mockative.*
+import java.lang.reflect.Type
 
 internal fun ProcessableFunction.buildFunSpec(): FunSpec {
     val modifiers = buildModifiers()
@@ -29,7 +30,7 @@ internal fun ProcessableFunction.buildFunSpec(): FunSpec {
     if (isFromAny) {
         builder.addStatement("return %T.%L<%T>(this, %T(%S, %L), { super.%L(%L) })", MOCKABLE, invocation, returnType, INVOCATION_FUNCTION, name, listOfArguments, name, argumentsList)
     } else {
-        val callSpyInstance = buildCallSpyInstanceBlock(receiver != null, argumentsList)
+        val callSpyInstance = buildCallSpyInstanceBlock(receiver, argumentsList)
         builder.addStatement("return %T.%L<%T>(this, %T(%S, %L), %L){ %L }", MOCKABLE, invocation, returnType, INVOCATION_FUNCTION, name, listOfArguments, returnsUnit, callSpyInstance)
     }
 
@@ -37,10 +38,13 @@ internal fun ProcessableFunction.buildFunSpec(): FunSpec {
 }
 
 private fun ProcessableFunction.buildCallSpyInstanceBlock(
-    hasReceiver: Boolean,
+    hasReceiver: TypeName?,
     argumentsList: CodeBlock
 ): CodeBlock {
-    val callSpyInstance = if (hasReceiver) "this.`${name}`" else "$spyInstanceName!!.`${name}`"
+    val receiverIsClass = hasReceiver == this.parent?.sourceClassName
+    val receiver = if (receiverIsClass) spyInstanceName else if (hasReceiver != null) "this" else spyInstanceName
+
+    val callSpyInstance = "$receiver!!.`${name}`"
     val suppressDeprecationError = AnnotationSpec.builder(SUPPRESS_ANNOTATION)
             .addMember("%S", "DEPRECATION_ERROR")
             .build()

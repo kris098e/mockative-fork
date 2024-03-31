@@ -12,3 +12,7 @@ local.properties
 .project
 .settings/
 tools/*/build
+
+**/bin
+
+**/mockaaaaaa

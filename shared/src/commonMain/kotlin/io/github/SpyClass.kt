@@ -6,7 +6,7 @@ class SpyClass(val name: String) {
         return "Hello, $name"
     }
 
-    fun functionWithManyArgumented(
+    fun functionWithManyArguments(
         string: String,
         int: Int,
         long: Long,
@@ -14,4 +14,16 @@ class SpyClass(val name: String) {
     ): String {
         return "$string $int $long $list"
     }
+}
+
+fun SpyClass.extensionFunction(): String {
+    return "Hello, $name"
+}
+
+fun SpyClass.hello(): String {
+    return "Hello, $name"
+}
+
+fun String.hello(): String {
+    return "Hello, $this"
 }

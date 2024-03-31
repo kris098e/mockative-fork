@@ -122,11 +122,11 @@ class SpyTests {
     fun givenCallNotMatchingStub_whenCallingWithDifferentArguments_thenExpectFallbackToRealImplementation() {
         // Given
         every {
-            spy.functionWithManyArgumented(string = "hej", int = 1, long = 10, list = listOf("hello there"))
+            spy.functionWithManyArguments(string = "hej", int = 1, long = 10, list = listOf("hello there"))
         }.returns("stubbed")
 
         // When
-        val output = spy.functionWithManyArgumented(string = "hej", int = 1, long = 10, list = listOf("hello there", "I am not stubbed"))
+        val output = spy.functionWithManyArguments(string = "hej", int = 1, long = 10, list = listOf("hello there", "I am not stubbed"))
 
         // Then
         assertEquals("hej 1 10 [hello there, I am not stubbed]", output)
@@ -136,11 +136,11 @@ class SpyTests {
     fun givenCallMatchingStub_whenCallingWithDifferentArguments_thenExpectFallbackToRealImplementation() {
         // Given
         every {
-            spy.functionWithManyArgumented(string = "hej", int = 1, long = 1, list = listOf("hello there"))
+            spy.functionWithManyArguments(string = "hej", int = 1, long = 1, list = listOf("hello there"))
         }.returns("stubbed")
 
         // When
-        val output = spy.functionWithManyArgumented(string = "hej", int = 1, long = 1, list = listOf("hello there"))
+        val output = spy.functionWithManyArguments(string = "hej", int = 1, long = 1, list = listOf("hello there"))
 
         // Then
         assertEquals("stubbed", output)

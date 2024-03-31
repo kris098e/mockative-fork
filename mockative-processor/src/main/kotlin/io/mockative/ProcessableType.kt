@@ -3,6 +3,7 @@ package io.mockative
 import com.google.devtools.ksp.getConstructors
 import com.google.devtools.ksp.isConstructor
 import com.google.devtools.ksp.isPublic
+import com.google.devtools.ksp.processing.Dependencies
 import com.google.devtools.ksp.processing.Resolver
 import com.google.devtools.ksp.symbol.*
 import com.squareup.kotlinpoet.ClassName
@@ -81,6 +82,7 @@ data class ProcessableType(
                         declaration = parameterDeclaration,
                         usages = containingFilesOfClass,
                         generateTypeFunctions = listOf(ShouldGenerateTypeFunction.NONE),
+                        extentionFunctions = emptyList(),
                     )
                 } else null
             }
@@ -92,6 +94,7 @@ data class ProcessableType(
             declaration: KSClassDeclaration,
             usages: List<KSFile>,
             generateTypeFunctions: List<ShouldGenerateTypeFunction>,
+            extentionFunctions: List<KSFunctionDeclaration>,
         ): ProcessableType {
             val sourceClassName = declaration.toClassName()
             val sourcePackageName = sourceClassName.packageName
@@ -112,8 +115,8 @@ data class ProcessableType(
             val functions = declaration.getAllFunctions()
                 // Functions from Any are manually implemented in [Mockable]
                 .filter { it.isPublic() && !it.isConstructor() && !it.isFromAny() && !it.modifiers.contains(Modifier.FINAL) }
-                .map { ProcessableFunction.fromDeclaration(it, typeParameterResolver) }
-                .toList()
+                .map { ProcessableFunction.fromDeclaration(it, typeParameterResolver) } +
+                    extentionFunctions.map { ProcessableFunction.fromDeclaration(it, typeParameterResolver) }
 
             val properties = declaration.getAllProperties()
                 .filter { it.isPublic() }
@@ -128,7 +131,7 @@ data class ProcessableType(
                 declaration = declaration,
                 sourceClassName = sourceClassName,
                 mockClassName = mockClassName,
-                functions = functions,
+                functions = functions.toList(),
                 properties = properties,
                 usages = usages,
                 typeParameterResolver = typeParameterResolver,
@@ -146,6 +149,25 @@ data class ProcessableType(
 
         fun fromResolver(resolver: Resolver, stubsUnitByDefault: Boolean): List<ProcessableType> {
             this.stubsUnitByDefault = stubsUnitByDefault
+
+            val extensionFunctions = resolver.getAllFiles()
+                .also { it.map { it.filePath }.forEach { log.warn("file: $it") } }
+                .flatMap { it.declarations }
+                .also { log.warn("classes: ${it.toList().filter { !it.toString().endsWith("Mock") }}")}
+                .mapNotNull {
+                    it as? KSClassDeclaration
+                }
+                .flatMap { it.getAllFunctions() }
+                .also { log.warn("functions: ${it.toList()}")}
+                .filter { it.isPublic() }
+                .filter { it.extensionReceiver != null }
+                .also { log.warn("Extension functions: ${it.toList()}")}
+
+            val extensionFunctionsMap = extensionFunctions.groupBy {
+                it.extensionReceiver!!.resolve().declaration as KSClassDeclaration
+            }.also {
+                log.warn("Extension functions: $it")
+            }
 
             val processableTypes = resolver.getSymbolsWithAnnotation(MOCK_ANNOTATION.canonicalName)
                 .filterIsInstance<KSPropertyDeclaration>()
@@ -167,13 +189,16 @@ data class ProcessableType(
                     val combinedUsages = usages.filterNotNull().distinct()
 
                     return@mapValues combinedUsages to combinedMockTypes
-                }.map { (classDec, fileAndMockTypesInformation) ->
+                }
+                .map { (classDec, fileAndMockTypesInformation) ->
                     val (usages, mockTypes) = fileAndMockTypesInformation
+                    val extentionFunctions = extensionFunctionsMap[classDec] ?: emptyList()
 
                     fromDeclaration(
                         declaration = classDec,
                         usages = usages,
                         generateTypeFunctions = mockTypes,
+                        extentionFunctions = extentionFunctions,
                     )
                 }
                 .flatten()
