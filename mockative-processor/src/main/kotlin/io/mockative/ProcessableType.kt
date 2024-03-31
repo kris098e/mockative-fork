@@ -155,9 +155,8 @@ data class ProcessableType(
                 .flatMap { it.declarations }
                 .also { log.warn("classes: ${it.toList().filter { !it.toString().endsWith("Mock") }}")}
                 .mapNotNull {
-                    it as? KSClassDeclaration
+                    it as? KSFunctionDeclaration
                 }
-                .flatMap { it.getAllFunctions() }
                 .also { log.warn("functions: ${it.toList()}")}
                 .filter { it.isPublic() }
                 .filter { it.extensionReceiver != null }
