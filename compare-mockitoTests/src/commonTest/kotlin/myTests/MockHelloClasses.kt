@@ -5,6 +5,7 @@ import compare.frameworks.classes.*
 import org.junit.Assert
 import org.junit.Test
 import org.mockito.Mockito.`when`
+import kotlin.test.assertTrue
 
 class MockHelloClasses {
 val mock1: HelloClass1 = mock(HelloClass1::class.java)
@@ -407,106 +408,7 @@ val mock397: HelloClass397 = mock(HelloClass397::class.java)
 val mock398: HelloClass398 = mock(HelloClass398::class.java)
 val mock399: HelloClass399 = mock(HelloClass399::class.java)
 val mock400: HelloClass400 = mock(HelloClass400::class.java)
-val mock401: HelloClass401 = mock(HelloClass401::class.java)
-val mock402: HelloClass402 = mock(HelloClass402::class.java)
-val mock403: HelloClass403 = mock(HelloClass403::class.java)
-val mock404: HelloClass404 = mock(HelloClass404::class.java)
-val mock405: HelloClass405 = mock(HelloClass405::class.java)
-val mock406: HelloClass406 = mock(HelloClass406::class.java)
-val mock407: HelloClass407 = mock(HelloClass407::class.java)
-val mock408: HelloClass408 = mock(HelloClass408::class.java)
-val mock409: HelloClass409 = mock(HelloClass409::class.java)
-val mock410: HelloClass410 = mock(HelloClass410::class.java)
-val mock411: HelloClass411 = mock(HelloClass411::class.java)
-val mock412: HelloClass412 = mock(HelloClass412::class.java)
-val mock413: HelloClass413 = mock(HelloClass413::class.java)
-val mock414: HelloClass414 = mock(HelloClass414::class.java)
-val mock415: HelloClass415 = mock(HelloClass415::class.java)
-val mock416: HelloClass416 = mock(HelloClass416::class.java)
-val mock417: HelloClass417 = mock(HelloClass417::class.java)
-val mock418: HelloClass418 = mock(HelloClass418::class.java)
-val mock419: HelloClass419 = mock(HelloClass419::class.java)
-val mock420: HelloClass420 = mock(HelloClass420::class.java)
-val mock421: HelloClass421 = mock(HelloClass421::class.java)
-val mock422: HelloClass422 = mock(HelloClass422::class.java)
-val mock423: HelloClass423 = mock(HelloClass423::class.java)
-val mock424: HelloClass424 = mock(HelloClass424::class.java)
-val mock425: HelloClass425 = mock(HelloClass425::class.java)
-val mock426: HelloClass426 = mock(HelloClass426::class.java)
-val mock427: HelloClass427 = mock(HelloClass427::class.java)
-val mock428: HelloClass428 = mock(HelloClass428::class.java)
-val mock429: HelloClass429 = mock(HelloClass429::class.java)
-val mock430: HelloClass430 = mock(HelloClass430::class.java)
-val mock431: HelloClass431 = mock(HelloClass431::class.java)
-val mock432: HelloClass432 = mock(HelloClass432::class.java)
-val mock433: HelloClass433 = mock(HelloClass433::class.java)
-val mock434: HelloClass434 = mock(HelloClass434::class.java)
-val mock435: HelloClass435 = mock(HelloClass435::class.java)
-val mock436: HelloClass436 = mock(HelloClass436::class.java)
-val mock437: HelloClass437 = mock(HelloClass437::class.java)
-val mock438: HelloClass438 = mock(HelloClass438::class.java)
-val mock439: HelloClass439 = mock(HelloClass439::class.java)
-val mock440: HelloClass440 = mock(HelloClass440::class.java)
-val mock441: HelloClass441 = mock(HelloClass441::class.java)
-val mock442: HelloClass442 = mock(HelloClass442::class.java)
-val mock443: HelloClass443 = mock(HelloClass443::class.java)
-val mock444: HelloClass444 = mock(HelloClass444::class.java)
-val mock445: HelloClass445 = mock(HelloClass445::class.java)
-val mock446: HelloClass446 = mock(HelloClass446::class.java)
-val mock447: HelloClass447 = mock(HelloClass447::class.java)
-val mock448: HelloClass448 = mock(HelloClass448::class.java)
-val mock449: HelloClass449 = mock(HelloClass449::class.java)
-val mock450: HelloClass450 = mock(HelloClass450::class.java)
-val mock451: HelloClass451 = mock(HelloClass451::class.java)
-val mock452: HelloClass452 = mock(HelloClass452::class.java)
-val mock453: HelloClass453 = mock(HelloClass453::class.java)
-val mock454: HelloClass454 = mock(HelloClass454::class.java)
-val mock455: HelloClass455 = mock(HelloClass455::class.java)
-val mock456: HelloClass456 = mock(HelloClass456::class.java)
-val mock457: HelloClass457 = mock(HelloClass457::class.java)
-val mock458: HelloClass458 = mock(HelloClass458::class.java)
-val mock459: HelloClass459 = mock(HelloClass459::class.java)
-val mock460: HelloClass460 = mock(HelloClass460::class.java)
-val mock461: HelloClass461 = mock(HelloClass461::class.java)
-val mock462: HelloClass462 = mock(HelloClass462::class.java)
-val mock463: HelloClass463 = mock(HelloClass463::class.java)
-val mock464: HelloClass464 = mock(HelloClass464::class.java)
-val mock465: HelloClass465 = mock(HelloClass465::class.java)
-val mock466: HelloClass466 = mock(HelloClass466::class.java)
-val mock467: HelloClass467 = mock(HelloClass467::class.java)
-val mock468: HelloClass468 = mock(HelloClass468::class.java)
-val mock469: HelloClass469 = mock(HelloClass469::class.java)
-val mock470: HelloClass470 = mock(HelloClass470::class.java)
-val mock471: HelloClass471 = mock(HelloClass471::class.java)
-val mock472: HelloClass472 = mock(HelloClass472::class.java)
-val mock473: HelloClass473 = mock(HelloClass473::class.java)
-val mock474: HelloClass474 = mock(HelloClass474::class.java)
-val mock475: HelloClass475 = mock(HelloClass475::class.java)
-val mock476: HelloClass476 = mock(HelloClass476::class.java)
-val mock477: HelloClass477 = mock(HelloClass477::class.java)
-val mock478: HelloClass478 = mock(HelloClass478::class.java)
-val mock479: HelloClass479 = mock(HelloClass479::class.java)
-val mock480: HelloClass480 = mock(HelloClass480::class.java)
-val mock481: HelloClass481 = mock(HelloClass481::class.java)
-val mock482: HelloClass482 = mock(HelloClass482::class.java)
-val mock483: HelloClass483 = mock(HelloClass483::class.java)
-val mock484: HelloClass484 = mock(HelloClass484::class.java)
-val mock485: HelloClass485 = mock(HelloClass485::class.java)
-val mock486: HelloClass486 = mock(HelloClass486::class.java)
-val mock487: HelloClass487 = mock(HelloClass487::class.java)
-val mock488: HelloClass488 = mock(HelloClass488::class.java)
-val mock489: HelloClass489 = mock(HelloClass489::class.java)
-val mock490: HelloClass490 = mock(HelloClass490::class.java)
-val mock491: HelloClass491 = mock(HelloClass491::class.java)
-val mock492: HelloClass492 = mock(HelloClass492::class.java)
-val mock493: HelloClass493 = mock(HelloClass493::class.java)
-val mock494: HelloClass494 = mock(HelloClass494::class.java)
-val mock495: HelloClass495 = mock(HelloClass495::class.java)
-val mock496: HelloClass496 = mock(HelloClass496::class.java)
-val mock497: HelloClass497 = mock(HelloClass497::class.java)
-val mock498: HelloClass498 = mock(HelloClass498::class.java)
-val mock499: HelloClass499 = mock(HelloClass499::class.java)
-val mock500: HelloClass500 = mock(HelloClass500::class.java)
+
 val mocks = listOf<HelloClass>(
 mock1,
 mock2,
@@ -908,116 +810,25 @@ mock397,
 mock398,
 mock399,
 mock400,
-mock401,
-mock402,
-mock403,
-mock404,
-mock405,
-mock406,
-mock407,
-mock408,
-mock409,
-mock410,
-mock411,
-mock412,
-mock413,
-mock414,
-mock415,
-mock416,
-mock417,
-mock418,
-mock419,
-mock420,
-mock421,
-mock422,
-mock423,
-mock424,
-mock425,
-mock426,
-mock427,
-mock428,
-mock429,
-mock430,
-mock431,
-mock432,
-mock433,
-mock434,
-mock435,
-mock436,
-mock437,
-mock438,
-mock439,
-mock440,
-mock441,
-mock442,
-mock443,
-mock444,
-mock445,
-mock446,
-mock447,
-mock448,
-mock449,
-mock450,
-mock451,
-mock452,
-mock453,
-mock454,
-mock455,
-mock456,
-mock457,
-mock458,
-mock459,
-mock460,
-mock461,
-mock462,
-mock463,
-mock464,
-mock465,
-mock466,
-mock467,
-mock468,
-mock469,
-mock470,
-mock471,
-mock472,
-mock473,
-mock474,
-mock475,
-mock476,
-mock477,
-mock478,
-mock479,
-mock480,
-mock481,
-mock482,
-mock483,
-mock484,
-mock485,
-mock486,
-mock487,
-mock488,
-mock489,
-mock490,
-mock491,
-mock492,
-mock493,
-mock494,
-mock495,
-mock496,
-mock497,
-mock498,
-mock499,
-mock500,
 )
 
     @Test
-    fun test() {
+    fun stubbing() {
         mocks.forEach {
-            `when`(it.sayHello("Hello!")).thenReturn("not hello")
+            mocks.forEach {
+                `when`(it.sayHello("Hello!")).thenReturn("not hello")
+            }
         }
 
         mocks.forEach {
-            Assert.assertEquals("not hello", it.sayHello("Hello!"))
+            mocks.forEach {
+                Assert.assertEquals("not hello", it.sayHello("Hello!"))
+            }
         }
+    }
+
+    @Test
+    fun pass() {
+        assertTrue(true)
     }
 }

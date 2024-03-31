@@ -401,112 +401,13 @@ import compare.frameworks.classes.HelloClass397
 import compare.frameworks.classes.HelloClass398
 import compare.frameworks.classes.HelloClass399
 import compare.frameworks.classes.HelloClass400
-import compare.frameworks.classes.HelloClass401
-import compare.frameworks.classes.HelloClass402
-import compare.frameworks.classes.HelloClass403
-import compare.frameworks.classes.HelloClass404
-import compare.frameworks.classes.HelloClass405
-import compare.frameworks.classes.HelloClass406
-import compare.frameworks.classes.HelloClass407
-import compare.frameworks.classes.HelloClass408
-import compare.frameworks.classes.HelloClass409
-import compare.frameworks.classes.HelloClass410
-import compare.frameworks.classes.HelloClass411
-import compare.frameworks.classes.HelloClass412
-import compare.frameworks.classes.HelloClass413
-import compare.frameworks.classes.HelloClass414
-import compare.frameworks.classes.HelloClass415
-import compare.frameworks.classes.HelloClass416
-import compare.frameworks.classes.HelloClass417
-import compare.frameworks.classes.HelloClass418
-import compare.frameworks.classes.HelloClass419
-import compare.frameworks.classes.HelloClass420
-import compare.frameworks.classes.HelloClass421
-import compare.frameworks.classes.HelloClass422
-import compare.frameworks.classes.HelloClass423
-import compare.frameworks.classes.HelloClass424
-import compare.frameworks.classes.HelloClass425
-import compare.frameworks.classes.HelloClass426
-import compare.frameworks.classes.HelloClass427
-import compare.frameworks.classes.HelloClass428
-import compare.frameworks.classes.HelloClass429
-import compare.frameworks.classes.HelloClass430
-import compare.frameworks.classes.HelloClass431
-import compare.frameworks.classes.HelloClass432
-import compare.frameworks.classes.HelloClass433
-import compare.frameworks.classes.HelloClass434
-import compare.frameworks.classes.HelloClass435
-import compare.frameworks.classes.HelloClass436
-import compare.frameworks.classes.HelloClass437
-import compare.frameworks.classes.HelloClass438
-import compare.frameworks.classes.HelloClass439
-import compare.frameworks.classes.HelloClass440
-import compare.frameworks.classes.HelloClass441
-import compare.frameworks.classes.HelloClass442
-import compare.frameworks.classes.HelloClass443
-import compare.frameworks.classes.HelloClass444
-import compare.frameworks.classes.HelloClass445
-import compare.frameworks.classes.HelloClass446
-import compare.frameworks.classes.HelloClass447
-import compare.frameworks.classes.HelloClass448
-import compare.frameworks.classes.HelloClass449
-import compare.frameworks.classes.HelloClass450
-import compare.frameworks.classes.HelloClass451
-import compare.frameworks.classes.HelloClass452
-import compare.frameworks.classes.HelloClass453
-import compare.frameworks.classes.HelloClass454
-import compare.frameworks.classes.HelloClass455
-import compare.frameworks.classes.HelloClass456
-import compare.frameworks.classes.HelloClass457
-import compare.frameworks.classes.HelloClass458
-import compare.frameworks.classes.HelloClass459
-import compare.frameworks.classes.HelloClass460
-import compare.frameworks.classes.HelloClass461
-import compare.frameworks.classes.HelloClass462
-import compare.frameworks.classes.HelloClass463
-import compare.frameworks.classes.HelloClass464
-import compare.frameworks.classes.HelloClass465
-import compare.frameworks.classes.HelloClass466
-import compare.frameworks.classes.HelloClass467
-import compare.frameworks.classes.HelloClass468
-import compare.frameworks.classes.HelloClass469
-import compare.frameworks.classes.HelloClass470
-import compare.frameworks.classes.HelloClass471
-import compare.frameworks.classes.HelloClass472
-import compare.frameworks.classes.HelloClass473
-import compare.frameworks.classes.HelloClass474
-import compare.frameworks.classes.HelloClass475
-import compare.frameworks.classes.HelloClass476
-import compare.frameworks.classes.HelloClass477
-import compare.frameworks.classes.HelloClass478
-import compare.frameworks.classes.HelloClass479
-import compare.frameworks.classes.HelloClass480
-import compare.frameworks.classes.HelloClass481
-import compare.frameworks.classes.HelloClass482
-import compare.frameworks.classes.HelloClass483
-import compare.frameworks.classes.HelloClass484
-import compare.frameworks.classes.HelloClass485
-import compare.frameworks.classes.HelloClass486
-import compare.frameworks.classes.HelloClass487
-import compare.frameworks.classes.HelloClass488
-import compare.frameworks.classes.HelloClass489
-import compare.frameworks.classes.HelloClass490
-import compare.frameworks.classes.HelloClass491
-import compare.frameworks.classes.HelloClass492
-import compare.frameworks.classes.HelloClass493
-import compare.frameworks.classes.HelloClass494
-import compare.frameworks.classes.HelloClass495
-import compare.frameworks.classes.HelloClass496
-import compare.frameworks.classes.HelloClass497
-import compare.frameworks.classes.HelloClass498
-import compare.frameworks.classes.HelloClass499
-import compare.frameworks.classes.HelloClass500
 import io.mockative.Mock
 import io.mockative.classOf
 import io.mockative.every
 import io.mockative.mock
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import kotlin.test.DefaultAsserter.assertEquals
+import kotlin.test.Test
+import kotlin.test.assertTrue
 
 class MockHelloClasses {
 @Mock val mock1: HelloClass1 = mock(classOf<HelloClass1>())
@@ -909,107 +810,7 @@ class MockHelloClasses {
 @Mock val mock398: HelloClass398 = mock(classOf<HelloClass398>())
 @Mock val mock399: HelloClass399 = mock(classOf<HelloClass399>())
 @Mock val mock400: HelloClass400 = mock(classOf<HelloClass400>())
-@Mock val mock401: HelloClass401 = mock(classOf<HelloClass401>())
-@Mock val mock402: HelloClass402 = mock(classOf<HelloClass402>())
-@Mock val mock403: HelloClass403 = mock(classOf<HelloClass403>())
-@Mock val mock404: HelloClass404 = mock(classOf<HelloClass404>())
-@Mock val mock405: HelloClass405 = mock(classOf<HelloClass405>())
-@Mock val mock406: HelloClass406 = mock(classOf<HelloClass406>())
-@Mock val mock407: HelloClass407 = mock(classOf<HelloClass407>())
-@Mock val mock408: HelloClass408 = mock(classOf<HelloClass408>())
-@Mock val mock409: HelloClass409 = mock(classOf<HelloClass409>())
-@Mock val mock410: HelloClass410 = mock(classOf<HelloClass410>())
-@Mock val mock411: HelloClass411 = mock(classOf<HelloClass411>())
-@Mock val mock412: HelloClass412 = mock(classOf<HelloClass412>())
-@Mock val mock413: HelloClass413 = mock(classOf<HelloClass413>())
-@Mock val mock414: HelloClass414 = mock(classOf<HelloClass414>())
-@Mock val mock415: HelloClass415 = mock(classOf<HelloClass415>())
-@Mock val mock416: HelloClass416 = mock(classOf<HelloClass416>())
-@Mock val mock417: HelloClass417 = mock(classOf<HelloClass417>())
-@Mock val mock418: HelloClass418 = mock(classOf<HelloClass418>())
-@Mock val mock419: HelloClass419 = mock(classOf<HelloClass419>())
-@Mock val mock420: HelloClass420 = mock(classOf<HelloClass420>())
-@Mock val mock421: HelloClass421 = mock(classOf<HelloClass421>())
-@Mock val mock422: HelloClass422 = mock(classOf<HelloClass422>())
-@Mock val mock423: HelloClass423 = mock(classOf<HelloClass423>())
-@Mock val mock424: HelloClass424 = mock(classOf<HelloClass424>())
-@Mock val mock425: HelloClass425 = mock(classOf<HelloClass425>())
-@Mock val mock426: HelloClass426 = mock(classOf<HelloClass426>())
-@Mock val mock427: HelloClass427 = mock(classOf<HelloClass427>())
-@Mock val mock428: HelloClass428 = mock(classOf<HelloClass428>())
-@Mock val mock429: HelloClass429 = mock(classOf<HelloClass429>())
-@Mock val mock430: HelloClass430 = mock(classOf<HelloClass430>())
-@Mock val mock431: HelloClass431 = mock(classOf<HelloClass431>())
-@Mock val mock432: HelloClass432 = mock(classOf<HelloClass432>())
-@Mock val mock433: HelloClass433 = mock(classOf<HelloClass433>())
-@Mock val mock434: HelloClass434 = mock(classOf<HelloClass434>())
-@Mock val mock435: HelloClass435 = mock(classOf<HelloClass435>())
-@Mock val mock436: HelloClass436 = mock(classOf<HelloClass436>())
-@Mock val mock437: HelloClass437 = mock(classOf<HelloClass437>())
-@Mock val mock438: HelloClass438 = mock(classOf<HelloClass438>())
-@Mock val mock439: HelloClass439 = mock(classOf<HelloClass439>())
-@Mock val mock440: HelloClass440 = mock(classOf<HelloClass440>())
-@Mock val mock441: HelloClass441 = mock(classOf<HelloClass441>())
-@Mock val mock442: HelloClass442 = mock(classOf<HelloClass442>())
-@Mock val mock443: HelloClass443 = mock(classOf<HelloClass443>())
-@Mock val mock444: HelloClass444 = mock(classOf<HelloClass444>())
-@Mock val mock445: HelloClass445 = mock(classOf<HelloClass445>())
-@Mock val mock446: HelloClass446 = mock(classOf<HelloClass446>())
-@Mock val mock447: HelloClass447 = mock(classOf<HelloClass447>())
-@Mock val mock448: HelloClass448 = mock(classOf<HelloClass448>())
-@Mock val mock449: HelloClass449 = mock(classOf<HelloClass449>())
-@Mock val mock450: HelloClass450 = mock(classOf<HelloClass450>())
-@Mock val mock451: HelloClass451 = mock(classOf<HelloClass451>())
-@Mock val mock452: HelloClass452 = mock(classOf<HelloClass452>())
-@Mock
-val mock453: HelloClass453 = mock(classOf<HelloClass453>())
-@Mock val mock454: HelloClass454 = mock(classOf<HelloClass454>())
-@Mock val mock455: HelloClass455 = mock(classOf<HelloClass455>())
-@Mock val mock456: HelloClass456 = mock(classOf<HelloClass456>())
-@Mock val mock457: HelloClass457 = mock(classOf<HelloClass457>())
-@Mock val mock458: HelloClass458 = mock(classOf<HelloClass458>())
-@Mock val mock459: HelloClass459 = mock(classOf<HelloClass459>())
-@Mock val mock460: HelloClass460 = mock(classOf<HelloClass460>())
-@Mock val mock461: HelloClass461 = mock(classOf<HelloClass461>())
-@Mock val mock462: HelloClass462 = mock(classOf<HelloClass462>())
-@Mock val mock463: HelloClass463 = mock(classOf<HelloClass463>())
-@Mock val mock464: HelloClass464 = mock(classOf<HelloClass464>())
-@Mock val mock465: HelloClass465 = mock(classOf<HelloClass465>())
-@Mock val mock466: HelloClass466 = mock(classOf<HelloClass466>())
-@Mock val mock467: HelloClass467 = mock(classOf<HelloClass467>())
-@Mock val mock468: HelloClass468 = mock(classOf<HelloClass468>())
-@Mock val mock469: HelloClass469 = mock(classOf<HelloClass469>())
-@Mock val mock470: HelloClass470 = mock(classOf<HelloClass470>())
-@Mock val mock471: HelloClass471 = mock(classOf<HelloClass471>())
-@Mock val mock472: HelloClass472 = mock(classOf<HelloClass472>())
-@Mock val mock473: HelloClass473 = mock(classOf<HelloClass473>())
-@Mock val mock474: HelloClass474 = mock(classOf<HelloClass474>())
-@Mock val mock475: HelloClass475 = mock(classOf<HelloClass475>())
-@Mock val mock476: HelloClass476 = mock(classOf<HelloClass476>())
-@Mock val mock477: HelloClass477 = mock(classOf<HelloClass477>())
-@Mock val mock478: HelloClass478 = mock(classOf<HelloClass478>())
-@Mock val mock479: HelloClass479 = mock(classOf<HelloClass479>())
-@Mock val mock480: HelloClass480 = mock(classOf<HelloClass480>())
-@Mock val mock481: HelloClass481 = mock(classOf<HelloClass481>())
-@Mock val mock482: HelloClass482 = mock(classOf<HelloClass482>())
-@Mock val mock483: HelloClass483 = mock(classOf<HelloClass483>())
-@Mock val mock484: HelloClass484 = mock(classOf<HelloClass484>())
-@Mock val mock485: HelloClass485 = mock(classOf<HelloClass485>())
-@Mock val mock486: HelloClass486 = mock(classOf<HelloClass486>())
-@Mock val mock487: HelloClass487 = mock(classOf<HelloClass487>())
-@Mock val mock488: HelloClass488 = mock(classOf<HelloClass488>())
-@Mock val mock489: HelloClass489 = mock(classOf<HelloClass489>())
-@Mock val mock490: HelloClass490 = mock(classOf<HelloClass490>())
-@Mock val mock491: HelloClass491 = mock(classOf<HelloClass491>())
-@Mock val mock492: HelloClass492 = mock(classOf<HelloClass492>())
-@Mock val mock493: HelloClass493 = mock(classOf<HelloClass493>())
-@Mock val mock494: HelloClass494 = mock(classOf<HelloClass494>())
-@Mock val mock495: HelloClass495 = mock(classOf<HelloClass495>())
-@Mock val mock496: HelloClass496 = mock(classOf<HelloClass496>())
-@Mock val mock497: HelloClass497 = mock(classOf<HelloClass497>())
-@Mock val mock498: HelloClass498 = mock(classOf<HelloClass498>())
-@Mock val mock499: HelloClass499 = mock(classOf<HelloClass499>())
-@Mock val mock500: HelloClass500 = mock(classOf<HelloClass500>())
+
 val mocks = listOf<HelloClass>(
 mock1,
 mock2,
@@ -1411,118 +1212,27 @@ mock397,
 mock398,
 mock399,
 mock400,
-mock401,
-mock402,
-mock403,
-mock404,
-mock405,
-mock406,
-mock407,
-mock408,
-mock409,
-mock410,
-mock411,
-mock412,
-mock413,
-mock414,
-mock415,
-mock416,
-mock417,
-mock418,
-mock419,
-mock420,
-mock421,
-mock422,
-mock423,
-mock424,
-mock425,
-mock426,
-mock427,
-mock428,
-mock429,
-mock430,
-mock431,
-mock432,
-mock433,
-mock434,
-mock435,
-mock436,
-mock437,
-mock438,
-mock439,
-mock440,
-mock441,
-mock442,
-mock443,
-mock444,
-mock445,
-mock446,
-mock447,
-mock448,
-mock449,
-mock450,
-mock451,
-mock452,
-mock453,
-mock454,
-mock455,
-mock456,
-mock457,
-mock458,
-mock459,
-mock460,
-mock461,
-mock462,
-mock463,
-mock464,
-mock465,
-mock466,
-mock467,
-mock468,
-mock469,
-mock470,
-mock471,
-mock472,
-mock473,
-mock474,
-mock475,
-mock476,
-mock477,
-mock478,
-mock479,
-mock480,
-mock481,
-mock482,
-mock483,
-mock484,
-mock485,
-mock486,
-mock487,
-mock488,
-mock489,
-mock490,
-mock491,
-mock492,
-mock493,
-mock494,
-mock495,
-mock496,
-mock497,
-mock498,
-mock499,
-mock500,
 )
 
     @Test
-    fun test() {
+    fun stubbing() {
         mocks.forEach {
-            every {
-                it.sayHello("Hello!")
-            }.returns("not hello")
+            mocks.forEach {
+                every {
+                    it.sayHello("Hello!")
+                }.returns("not hello")
+            }
         }
 
         mocks.forEach {
-            assertEquals("not hello", it.sayHello("Hello!"))
+            mocks.forEach {
+                assertEquals(expected = "not hello", actual = it.sayHello("Hello!"), message = "mocks: $it, $it")
+            }
         }
+    }
+
+    @Test
+    fun passingTest() {
+        assertTrue(true)
     }
 }

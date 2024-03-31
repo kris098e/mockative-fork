@@ -29,3 +29,7 @@ kotlin {
                 implementation("junit:junit:4.13.2")
             }
         }}}
+
+tasks.named<Test>("jvmTest") {
+    jvmArgs("-Xmx8g")
+}

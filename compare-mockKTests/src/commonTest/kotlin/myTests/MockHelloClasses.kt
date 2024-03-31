@@ -907,106 +907,7 @@ val mock397: HelloClass397 = mockk()
 val mock398: HelloClass398 = mockk()
 val mock399: HelloClass399 = mockk()
 val mock400: HelloClass400 = mockk()
-val mock401: HelloClass401 = mockk()
-val mock402: HelloClass402 = mockk()
-val mock403: HelloClass403 = mockk()
-val mock404: HelloClass404 = mockk()
-val mock405: HelloClass405 = mockk()
-val mock406: HelloClass406 = mockk()
-val mock407: HelloClass407 = mockk()
-val mock408: HelloClass408 = mockk()
-val mock409: HelloClass409 = mockk()
-val mock410: HelloClass410 = mockk()
-val mock411: HelloClass411 = mockk()
-val mock412: HelloClass412 = mockk()
-val mock413: HelloClass413 = mockk()
-val mock414: HelloClass414 = mockk()
-val mock415: HelloClass415 = mockk()
-val mock416: HelloClass416 = mockk()
-val mock417: HelloClass417 = mockk()
-val mock418: HelloClass418 = mockk()
-val mock419: HelloClass419 = mockk()
-val mock420: HelloClass420 = mockk()
-val mock421: HelloClass421 = mockk()
-val mock422: HelloClass422 = mockk()
-val mock423: HelloClass423 = mockk()
-val mock424: HelloClass424 = mockk()
-val mock425: HelloClass425 = mockk()
-val mock426: HelloClass426 = mockk()
-val mock427: HelloClass427 = mockk()
-val mock428: HelloClass428 = mockk()
-val mock429: HelloClass429 = mockk()
-val mock430: HelloClass430 = mockk()
-val mock431: HelloClass431 = mockk()
-val mock432: HelloClass432 = mockk()
-val mock433: HelloClass433 = mockk()
-val mock434: HelloClass434 = mockk()
-val mock435: HelloClass435 = mockk()
-val mock436: HelloClass436 = mockk()
-val mock437: HelloClass437 = mockk()
-val mock438: HelloClass438 = mockk()
-val mock439: HelloClass439 = mockk()
-val mock440: HelloClass440 = mockk()
-val mock441: HelloClass441 = mockk()
-val mock442: HelloClass442 = mockk()
-val mock443: HelloClass443 = mockk()
-val mock444: HelloClass444 = mockk()
-val mock445: HelloClass445 = mockk()
-val mock446: HelloClass446 = mockk()
-val mock447: HelloClass447 = mockk()
-val mock448: HelloClass448 = mockk()
-val mock449: HelloClass449 = mockk()
-val mock450: HelloClass450 = mockk()
-val mock451: HelloClass451 = mockk()
-val mock452: HelloClass452 = mockk()
-val mock453: HelloClass453 = mockk()
-val mock454: HelloClass454 = mockk()
-val mock455: HelloClass455 = mockk()
-val mock456: HelloClass456 = mockk()
-val mock457: HelloClass457 = mockk()
-val mock458: HelloClass458 = mockk()
-val mock459: HelloClass459 = mockk()
-val mock460: HelloClass460 = mockk()
-val mock461: HelloClass461 = mockk()
-val mock462: HelloClass462 = mockk()
-val mock463: HelloClass463 = mockk()
-val mock464: HelloClass464 = mockk()
-val mock465: HelloClass465 = mockk()
-val mock466: HelloClass466 = mockk()
-val mock467: HelloClass467 = mockk()
-val mock468: HelloClass468 = mockk()
-val mock469: HelloClass469 = mockk()
-val mock470: HelloClass470 = mockk()
-val mock471: HelloClass471 = mockk()
-val mock472: HelloClass472 = mockk()
-val mock473: HelloClass473 = mockk()
-val mock474: HelloClass474 = mockk()
-val mock475: HelloClass475 = mockk()
-val mock476: HelloClass476 = mockk()
-val mock477: HelloClass477 = mockk()
-val mock478: HelloClass478 = mockk()
-val mock479: HelloClass479 = mockk()
-val mock480: HelloClass480 = mockk()
-val mock481: HelloClass481 = mockk()
-val mock482: HelloClass482 = mockk()
-val mock483: HelloClass483 = mockk()
-val mock484: HelloClass484 = mockk()
-val mock485: HelloClass485 = mockk()
-val mock486: HelloClass486 = mockk()
-val mock487: HelloClass487 = mockk()
-val mock488: HelloClass488 = mockk()
-val mock489: HelloClass489 = mockk()
-val mock490: HelloClass490 = mockk()
-val mock491: HelloClass491 = mockk()
-val mock492: HelloClass492 = mockk()
-val mock493: HelloClass493 = mockk()
-val mock494: HelloClass494 = mockk()
-val mock495: HelloClass495 = mockk()
-val mock496: HelloClass496 = mockk()
-val mock497: HelloClass497 = mockk()
-val mock498: HelloClass498 = mockk()
-val mock499: HelloClass499 = mockk()
-val mock500: HelloClass500 = mockk()
+
 val mocks = listOf<HelloClass>(
 mock1,
 mock2,
@@ -1408,118 +1309,27 @@ mock397,
 mock398,
 mock399,
 mock400,
-mock401,
-mock402,
-mock403,
-mock404,
-mock405,
-mock406,
-mock407,
-mock408,
-mock409,
-mock410,
-mock411,
-mock412,
-mock413,
-mock414,
-mock415,
-mock416,
-mock417,
-mock418,
-mock419,
-mock420,
-mock421,
-mock422,
-mock423,
-mock424,
-mock425,
-mock426,
-mock427,
-mock428,
-mock429,
-mock430,
-mock431,
-mock432,
-mock433,
-mock434,
-mock435,
-mock436,
-mock437,
-mock438,
-mock439,
-mock440,
-mock441,
-mock442,
-mock443,
-mock444,
-mock445,
-mock446,
-mock447,
-mock448,
-mock449,
-mock450,
-mock451,
-mock452,
-mock453,
-mock454,
-mock455,
-mock456,
-mock457,
-mock458,
-mock459,
-mock460,
-mock461,
-mock462,
-mock463,
-mock464,
-mock465,
-mock466,
-mock467,
-mock468,
-mock469,
-mock470,
-mock471,
-mock472,
-mock473,
-mock474,
-mock475,
-mock476,
-mock477,
-mock478,
-mock479,
-mock480,
-mock481,
-mock482,
-mock483,
-mock484,
-mock485,
-mock486,
-mock487,
-mock488,
-mock489,
-mock490,
-mock491,
-mock492,
-mock493,
-mock494,
-mock495,
-mock496,
-mock497,
-mock498,
-mock499,
-mock500,
 )
 
     @Test
-    fun test() {
+    fun stubbing() {
         mocks.forEach {
-            every {
-                it.sayHello("Hello!")
-            }.returns("not hello")
+            mocks.forEach {
+                every {
+                    it.sayHello("Hello!")
+                }.returns("not hello")
+            }
         }
 
         mocks.forEach {
-            Assert.assertEquals("not hello", it.sayHello("Hello!"))
+            mocks.forEach { mock ->
+                Assert.assertEquals("not hello", mock.sayHello("Hello!"))
+            }
         }
+    }
+
+    @Test
+    fun pass() {
+        Assert.assertTrue(true)
     }
 }

@@ -1,5 +1,7 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
-    kotlin("jvm")
+    kotlin("multiplatform")
     kotlin("plugin.allopen")
 }
 
@@ -14,13 +16,23 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
-}
-
-tasks.test {
-    useJUnitPlatform()
-}
 kotlin {
     jvmToolchain(17)
+    jvm()
+
+
+    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
+        System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
+        System.getenv("NATIVE_ARCH")?.startsWith("arm") == true -> ::iosSimulatorArm64
+        System.getProperty("os.arch") == "aarch64"-> ::iosSimulatorArm64
+        else -> ::iosX64
+    }
+
+    iosTarget("ios") {
+        binaries {
+            framework {
+                baseName = "compare-testClasses"
+            }
+        }
+    }
 }

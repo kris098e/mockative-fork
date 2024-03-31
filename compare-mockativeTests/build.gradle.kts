@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
     kotlin("multiplatform")
     id("com.google.devtools.ksp")
@@ -14,10 +16,25 @@ kotlin {
     jvmToolchain(17)
     jvm()
 
+    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
+        System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
+        System.getenv("NATIVE_ARCH")?.startsWith("arm") == true -> ::iosSimulatorArm64
+        System.getProperty("os.arch") == "aarch64"-> ::iosSimulatorArm64
+        else -> ::iosX64
+    }
+
+    iosTarget("ios") {
+        binaries {
+            framework {
+                baseName = "compare-testClasses"
+            }
+        }
+    }
+
     sourceSets {
         named("commonTest") {
             dependencies {
-                implementation(project(":mockative"))
+                implementation("io.mockative:mockative:2.1.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
@@ -30,17 +47,17 @@ kotlin {
                 implementation("junit:junit:4.13.2")
             }
         }
-        getByName("commonTest") {
-            dependencies {
-                implementation(kotlin("reflect"))
-            }
+        named("iosTest") {
         }
     }}
+tasks.named<Test>("jvmTest") {
+    jvmArgs("-Xmx8g")
+}
 
 dependencies {
     configurations
         .filter { it.name.startsWith("ksp") && it.name.contains("Test") }
         .forEach {
-            add(it.name, project(":mockative-processor"))
+            add(it.name, "io.mockative:mockative-processor:2.1.0")
         }
 }

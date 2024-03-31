@@ -33,13 +33,9 @@ kotlin {
                 implementation("junit:junit:4.13.2")
             }
         }
-        getByName("commonTest") {
-            dependencies {
-                implementation(kotlin("reflect"))
-            }
-        }
     }}
 
 tasks.named<Test>("jvmTest") {
-    systemProperty("io.mockk.classdump.path", "mockaaaaaa")
+    jvmArgs("-Xmx8g")
+    //systemProperty("io.mockk.classdump.path", "mockaaaaaa")
 }
