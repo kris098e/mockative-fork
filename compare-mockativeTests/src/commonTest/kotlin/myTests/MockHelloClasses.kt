@@ -820,13 +820,12 @@ mock400,
             mocks.forEach {
                 every {
                     it.sayHello("Hello!")
-                }.returns("not hello")
+                }.returnsMany("not hello")
             }
         }
-
         mocks.forEach {
             mocks.forEach {
-                assertEquals(expected = "not hello", actual = it.sayHello("Hello!"), message = "mocks: $it, $it")
+                assertEquals(expected = "not hello", actual = it.sayHello("Hello!"), message = "mocks: $it")
             }
         }
     }

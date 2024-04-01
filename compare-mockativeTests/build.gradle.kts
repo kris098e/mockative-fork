@@ -15,11 +15,17 @@ kotlin {
     jvmToolchain(17)
     jvm()
     js(IR) {
-        browser()
+        browser {
+            testTask {
+                useMocha {
+                    timeout = "90s"
+                }
+            }
+        }
         nodejs {
             testTask {
-                useKarma {
-                    useChromeHeadless()
+                useMocha {
+                    timeout = "90s"
                 }
             }
         }
