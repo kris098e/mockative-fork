@@ -12,22 +12,18 @@ echo "" >> $mocks_output_file
 echo "import io.mockk.mockk" >> $mocks_output_file
 
 # Append imports and mocks to the same file
-echo "import compare.frameworks.classes.HelloClass" >> $mocks_output_file
-for i in {1..500}
-do
-echo "import compare.frameworks.classes.HelloClass${i}" >> $mocks_output_file
-done
+echo "import compare.frameworks.classes.*" >> $mocks_output_file
 
 echo "" >> $mocks_output_file
 echo "class MockHelloClasses {" >> $mocks_output_file
 # Append the mock initializations to the same file
-for i in {1..500}
+for i in {1..400}
 do
 echo "val mock${i}: HelloClass${i} = mockk()" >> $mocks_output_file
 done
 
 echo "val mocks = listOf<HelloClass>(" >> $mocks_output_file
-for i in {1..500}
+for i in {1..400}
 do
 echo "mock${i}," >> $mocks_output_file
 done

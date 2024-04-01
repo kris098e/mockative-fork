@@ -5,6 +5,7 @@ import compare.frameworks.classes.*
 import org.junit.Assert
 import org.junit.Test
 import org.mockito.Mockito.`when`
+import kotlin.test.DefaultAsserter.assertEquals
 import kotlin.test.assertTrue
 
 class MockHelloClasses {
@@ -822,7 +823,7 @@ mock400,
 
         mocks.forEach {
             mocks.forEach {
-                Assert.assertEquals("not hello", it.sayHello("Hello!"))
+                assertEquals(expected = "not hello", actual = it.sayHello("Hello!"), message = "$it")
             }
         }
     }

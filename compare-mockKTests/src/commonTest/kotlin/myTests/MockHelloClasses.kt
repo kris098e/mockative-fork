@@ -505,6 +505,8 @@ import compare.frameworks.classes.HelloClass500
 import io.mockk.every
 import org.junit.Assert
 import org.junit.Test
+import kotlin.test.DefaultAsserter.assertEquals
+import kotlin.test.assertEquals
 
 class MockHelloClasses {
 val mock1: HelloClass1 = mockk()
@@ -1317,13 +1319,13 @@ mock400,
             mocks.forEach {
                 every {
                     it.sayHello("Hello!")
-                }.returns("not hello")
+                }.returnsMany("not hello")
             }
         }
 
         mocks.forEach {
             mocks.forEach { mock ->
-                Assert.assertEquals("not hello", mock.sayHello("Hello!"))
+                assertEquals(expected = "not hello", actual = mock.sayHello("Hello!"), "mock: $mock")
             }
         }
     }

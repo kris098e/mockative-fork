@@ -17,13 +17,13 @@ echo "import compare.frameworks.classes.*" >> $mocks_output_file
 echo "" >> $mocks_output_file
 echo "class MockHelloClasses {" >> $mocks_output_file
 # Append the mock initializations to the same file
-for i in {1..500}
+for i in {1..400}
 do
 echo "val mock${i}: HelloClass${i} = mock(HelloClass${i}::class.java)" >> $mocks_output_file
 done
 
 echo "val mocks = listOf<HelloClass>(" >> $mocks_output_file
-for i in {1..500}
+for i in {1..400}
 do
 echo "mock${i}," >> $mocks_output_file
 done

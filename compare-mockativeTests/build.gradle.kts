@@ -1,35 +1,40 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin.Companion.kotlinNodeJsExtension
 
 plugins {
     kotlin("multiplatform")
     id("com.google.devtools.ksp")
+
+    id("com.android.library")
 }
 
 group = "org.example"
 version = "unspecified"
 
-repositories {
-    mavenCentral()
-}
 
 kotlin {
     jvmToolchain(17)
     jvm()
-
-    val iosTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget = when {
-        System.getenv("SDK_NAME")?.startsWith("iphoneos") == true -> ::iosArm64
-        System.getenv("NATIVE_ARCH")?.startsWith("arm") == true -> ::iosSimulatorArm64
-        System.getProperty("os.arch") == "aarch64"-> ::iosSimulatorArm64
-        else -> ::iosX64
-    }
-
-    iosTarget("ios") {
-        binaries {
-            framework {
-                baseName = "compare-testClasses"
+    js(IR) {
+        browser()
+        nodejs {
+            testTask {
+                useKarma {
+                    useChromeHeadless()
+                }
             }
         }
     }
+
+    androidTarget()
+
+    iosSimulatorArm64("ios") {
+        binaries {
+            framework {
+                baseName = "compare-mockativeTests"
+            }
+        }
+    }
+
 
     sourceSets {
         named("commonTest") {
@@ -48,8 +53,56 @@ kotlin {
             }
         }
         named("iosTest") {
+            dependencies {
+                implementation("io.mockative:mockative:2.1.0")
+            }
+            kotlin.srcDir(File(buildDir, "generated/ksp/ios/iosTest/kotlin"))
+        }
+
+        val androidUnitTest by getting {
+            dependencies {
+                implementation(kotlin("test-junit"))
+                implementation("junit:junit:4.13.2")
+            }
+        }
+
+        named("jsTest") {
+            dependencies {
+                implementation(kotlin("test-js"))
+            }
+
         }
     }}
+
+@Suppress("UnstableApiUsage")
+android {
+    compileSdk = 33
+    namespace = "io.mockative"
+
+//    sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
+
+    defaultConfig {
+        minSdk = 21
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        testInstrumentationRunnerArguments["clearPackageData"] = "true"
+
+        testOptions {
+            execution = "ANDROIDX_TEST_ORCHESTRATOR"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    dependencies {
+        androidTestImplementation("androidx.test:runner:1.5.2")
+        androidTestUtil("androidx.test:orchestrator:1.4.2")
+    }
+}
+
 tasks.named<Test>("jvmTest") {
     jvmArgs("-Xmx8g")
 }
