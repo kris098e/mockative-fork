@@ -17,7 +17,7 @@ echo "    fun sayHello(name: String): String" >> $output_file
 echo "}" >> $output_file
 
 # Append all classes to the same file
-for i in {1..400}
+for i in {1..1024}
 do
 echo "@MockativeMockable" >> $output_file
 echo "class HelloClass${i}: HelloClass {" >> $output_file

@@ -1,4 +1,5 @@
-import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin.Companion.kotlinNodeJsExtension
+import org.gradle.internal.impldep.org.junit.platform.launcher.TestExecutionListener
+import org.gradle.internal.impldep.org.junit.platform.launcher.TestPlan
 
 plugins {
     kotlin("multiplatform")
@@ -119,4 +120,14 @@ dependencies {
         .forEach {
             add(it.name, "io.mockative:mockative-processor:2.1.0")
         }
+}
+
+class TestMemoryListener : TestExecutionListener {
+    override fun testPlanExecutionFinished(testPlan: TestPlan?) {
+        val runtime = Runtime.getRuntime()
+        val usedMemoryInMB = (runtime.totalMemory() - runtime.freeMemory()) / 1024 / 1024
+        val maxMemoryInMB = runtime.maxMemory() / 1024 / 1024
+        println("Used Memory: $usedMemoryInMB MB")
+        println("Max Memory: $maxMemoryInMB MB")
+    }
 }
