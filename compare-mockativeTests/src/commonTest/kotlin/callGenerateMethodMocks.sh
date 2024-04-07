@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash ./generateMethodMocks.sh 256
+bash ./generateMethodMocks.sh 32

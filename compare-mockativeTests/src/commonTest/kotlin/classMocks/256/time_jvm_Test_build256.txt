@@ -1,60 +1,15 @@
-
 real	0m7.398s
-user	0m0.623s
-sys	0m0.066s
-
 real	0m6.892s
-user	0m0.613s
-sys	0m0.067s
-
 real	0m6.963s
-user	0m0.609s
-sys	0m0.062s
-
 real	0m6.958s
-user	0m0.615s
-sys	0m0.066s
-
 real	0m6.990s
-user	0m0.622s
-sys	0m0.061s
-
 real	0m6.940s
-user	0m0.621s
-sys	0m0.069s
-
 real	0m7.063s
-user	0m0.650s
-sys	0m0.068s
-
 real	0m7.486s
-user	0m0.617s
-sys	0m0.069s
-
 real	0m7.722s
-user	0m0.611s
-sys	0m0.068s
-
 real	0m7.167s
-user	0m0.617s
-sys	0m0.079s
-
 real	0m7.064s
-user	0m0.623s
-sys	0m0.062s
-
 real	0m7.484s
-user	0m0.619s
-sys	0m0.066s
-
 real	0m7.392s
-user	0m0.602s
-sys	0m0.066s
-
 real	0m7.446s
-user	0m0.631s
-sys	0m0.068s
-
 real	0m7.390s
-user	0m0.624s
-sys	0m0.068s

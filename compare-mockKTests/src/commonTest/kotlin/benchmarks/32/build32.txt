@@ -1,0 +1,10 @@
+real	0m8.025s
+real	0m8.069s
+real	0m7.202s
+real	0m8.046s
+real	0m7.197s
+real	0m7.923s
+real	0m8.171s
+real	0m8.412s
+real	0m8.084s
+real	0m8.322s

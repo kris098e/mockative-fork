@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash ./generateAlotOfMocks.sh 512
+bash ./generateAlotOfMocks.sh 32
