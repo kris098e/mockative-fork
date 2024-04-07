@@ -10,5 +10,6 @@ real	2m21.835s
 real	2m21.339s
 
 
-Average: 20.940s
+
+Average: 140.940s
 Variance: 0.160s

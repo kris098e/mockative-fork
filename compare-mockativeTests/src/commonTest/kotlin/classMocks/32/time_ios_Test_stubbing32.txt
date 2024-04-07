@@ -9,5 +9,6 @@ real 0m5.749s
 real 0m5.692s
 real 0m6.079s
 
+
 Average: 6.036s
 Variance: 0.175s

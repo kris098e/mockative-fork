@@ -6,15 +6,24 @@ def calculate_and_append_metrics(directory):
         for file in files:
             file_path = os.path.join(subdir, file)
             with open(file_path, 'r+') as f:
-                times = [float(line.strip().split('m')[1].strip('s')) for line in f if line.startswith('real')]
+                times = []
+                for line in f:
+                    if line.startswith('real'):
+                        # Replace tabs with spaces, then split
+                        parts = line.replace('\t', ' ').split()
+                        # Assuming the time part is always the second element after 'real'
+                        time_str = parts[1] if len(parts) > 1 else ''
+                        # Split time_str into minutes and seconds
+                        minutes, seconds = time_str.split('m')
+                        total_seconds = float(minutes) * 60 + float(seconds.rstrip('s'))
+                        times.append(total_seconds)
+
                 average = np.mean(times)
                 variance = np.var(times)
 
-                # Go to the end of the file to append the average and variance
+                f.seek(0, os.SEEK_END)  # Move to the end of the file before writing
                 f.write(f'\n\nAverage: {average:.3f}s\nVariance: {variance:.3f}s\n')
 
-# List of directories to process
-directories = ['32', '64', '128', '256', '512']
+directories = ['512']
 for directory in directories:
     calculate_and_append_metrics(directory)
-
