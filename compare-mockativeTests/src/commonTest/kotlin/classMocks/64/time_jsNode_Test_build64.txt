@@ -8,3 +8,7 @@ real	0m8.917s
 real	0m8.658s
 real	0m8.390s
 real	0m9.424s
+
+
+Average: 8.888s
+Variance: 0.087s
