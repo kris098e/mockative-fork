@@ -6,7 +6,7 @@ plugins {
 }
 
 allOpen {
-    annotation("compare.frameworks.annotations.MockativeMockable")
+    //annotation("compare.frameworks.annotations.MockativeMockable")
 }
 
 group = "org.example"
