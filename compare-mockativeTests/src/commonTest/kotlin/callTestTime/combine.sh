@@ -1,14 +1,14 @@
 #!/bin/bash
 
-number=32
+number=1024
 #bash iosCallTestStubbingTime.sh $number
 #bash iosCallTestBuildTime.sh $number
 
 #bash jsNodeCallTestStubbingTime.sh $number
 #bash jsNodeCallTestBuildTime.sh $number
 
-bash jvmCallTestBuildTime.sh $number
-# bash jvmCallTestStubbingTime.sh $number
+#bash jvmCallTestBuildTime.sh $number
+bash jvmCallTestStubbingTime.sh $number
 
 
 #bash androidCallTestStubbingTime.sh $number

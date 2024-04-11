@@ -1,0 +1,14 @@
+real	0m55.172s
+real	0m53.903s
+real	0m54.791s
+real	0m52.366s
+real	0m53.118s
+real	0m54.948s
+real	0m53.299s
+real	0m51.989s
+real	0m54.219s
+real	0m53.771s
+
+
+Average: 53.758s
+Variance: 1.040s
