@@ -1,0 +1,13 @@
+real 188.96s
+real 187.23s
+real 189.35s
+real 185.10s
+real 189.17s
+real 189.09s
+real 186.86s
+real 186.62s
+real 187.69s
+real 185.62s
+
+Average: 187.57s
+Variance: 2.14s

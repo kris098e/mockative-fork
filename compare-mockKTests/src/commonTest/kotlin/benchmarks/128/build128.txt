@@ -8,21 +8,6 @@ real	0m9.470s
 real	0m10.134s
 real	0m8.627s
 real	0m8.787s
-real	0m9.187s
-real	0m8.900s
-real	0m10.247s
-real	0m9.137s
-real	0m9.926s
-real	0m9.655s
-real	0m9.408s
-real	0m9.135s
-real	0m9.152s
-real	0m9.064s
-real	0m10.053s
-real	0m8.930s
-real	0m9.242s
-real	0m10.092s
-real	0m9.229s
 
 
 Average: 9.209s

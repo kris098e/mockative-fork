@@ -16,7 +16,7 @@
 #bash callStubbing.sh 128
 #rm myTests/MockHelloClasses128.kt
 #
-#bash generateAlotOfMocks.sh 256
+bash generateAlotOfMocks.sh 256
 #bash callBuild.sh 256
 #bash callStubbing.sh 256
 #rm myTests/MockHelloClasses256.kt
@@ -26,7 +26,7 @@
 #bash callStubbing.sh 512
 #rm myTests/MockHelloClasses512.kt
 
-bash callStubbing.sh 1024
+#bash callStubbing.sh 1024
 
 #
 ###### METHOD MOCKS #####
