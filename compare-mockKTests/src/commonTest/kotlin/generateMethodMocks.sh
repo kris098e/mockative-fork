@@ -22,16 +22,10 @@ import kotlin.test.assertEquals
 echo "" >> $mocks_output_file
 echo "class MockHelloClasses$number {" >> $mocks_output_file
 # Append the mock initializations to the same file
-for i in $(seq 1 $number)
-do
-echo "val mock${i}: HelloClassMethods${i} = mockk()" >> $mocks_output_file
-done
 
-echo "val mocks = listOf<HelloClassMethods>(" >> $mocks_output_file
-for i in $(seq 1 $number)
-do
-echo "mock${i}," >> $mocks_output_file
-done
+echo "val mock: HelloClassMethods$number = mockk()" >> $mocks_output_file
+echo "val mocks = listOf<HelloClassMethods$number>(" >> $mocks_output_file
+echo "mock" >> $mocks_output_file
 echo ")" >> $mocks_output_file
 
 echo "

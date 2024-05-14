@@ -532,6 +532,7 @@ mock256,
                 }.returnsMany("not hello")
             }
         }
+
         mocks.forEach {
             mocks.forEach {
                 assertEquals(
